@@ -52,7 +52,7 @@ export function LandingPage() {
         <div className="bg-[#0D0D0D] ml-2 w-[380px] p-2 rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
           <GithubCalendar />
         </div>
-        <div className="w-[380px] m-2 mt-5 mb-7 ">
+        <div className="w-[380px] m-2 mt-5 mb-10 ">
         <FavoriteSong />
         </div>
       </div>

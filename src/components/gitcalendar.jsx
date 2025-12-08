@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GitHubCalendar from 'react-github-calendar';
 
 const selectLastHalfYear = (contributions) => {
@@ -13,40 +13,50 @@ const selectLastHalfYear = (contributions) => {
 };
 
 export function GithubCalendar() {
-  const [showCalendar, setShowCalendar] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Remove timeout completely or reduce it to 10ms if needed
     const timer = setTimeout(() => {
-      setShowCalendar(true);
-    }, 10); // minimal delay to ensure smoother mount
+      setIsReady(true);
+    }, 5000); // 5 Seconds delay
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="text-white p-2">
-      <h3 className="text-white font-semibold text-lg mb-1">GitHub Contributions</h3>
-      
-      <div className="inline-block scale-[0.85] md:scale-[1] origin-top-left">
-        {showCalendar ? (
+    <div className="flex flex-col items-center justify-center w-full h-full p-2 text-white">
+      <h3 className="self-start pl-2 mb-2 text-lg font-semibold text-white">
+        GitHub Contributions
+      </h3>
+
+      <div className="relative w-full h-[140px] flex justify-center items-center">
+        
+        {/* The Calendar */}
+        <div 
+          className={`transition-opacity duration-1000 ${
+            isReady ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <GitHubCalendar
             username="my-lord1"
             transformData={selectLastHalfYear}
             hideColorLegend
-            labels={{
-              totalCount: '{{count}} contributions in the last half year',
-            }}
-            className="w-[300px] h-[200px]"
+            hideTotalCount
+            blockSize={11}
+            blockMargin={3}
+            fontSize={14}
           />
-        ) : (
-          // Skeleton loader placeholder
-          <div className="w-[300px] h-[200px] animate-pulse bg-zinc-800 rounded-md" />
+        </div>
+
+        {/* The Skeleton */}
+        {!isReady && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 animate-pulse bg-[#0D0D0D] z-10">
+             <div className="w-[300px] h-3 rounded bg-zinc-800"></div>
+             <div className="w-[300px] h-20 rounded bg-zinc-800"></div>
+             <div className="w-[400px] h-3 rounded bg-zinc-800"></div>
+          </div>
         )}
       </div>
     </div>
   );
 }
-
-/*
-bg-gradient-to-br from-white/50 to-white/20 p-4 rounded-2xl shadow-md backdrop-blur-sm */

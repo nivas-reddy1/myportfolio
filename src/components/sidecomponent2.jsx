@@ -3,9 +3,9 @@ import React, { useEffect, useRef } from "react";
 export function SideComponent2() {
   const scrollRef = useRef(null);
 
-  const frontends = ["React", "Next.js", "TailwindCSS", "Recoil", "Framer Motion"];
-  const backends = ["Node.js", "Express", "Nest.js"];
-  const dbandServices = ["MongoDB", "Supabase", "Postgres", "Prisma ORM", "Docker"];
+  const frontends = ["React", "TailwindCSS", "Recoil", "Framer Motion"];
+  const backends = ["Node.js", "Express", "FASTAPI"];
+  const dbandServices = ["MongoDB", "Github", "Git", "Oauth", "JWT", "Postman"];
 
   // Duplicate content to allow smooth infinite scroll illusion
   const repeatedContent = [frontends, backends, dbandServices, frontends, backends, dbandServices];
