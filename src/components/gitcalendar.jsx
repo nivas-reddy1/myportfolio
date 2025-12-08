@@ -18,7 +18,7 @@ export function GithubCalendar() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsReady(true);
-    }, 5000); // 5 Seconds delay
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);

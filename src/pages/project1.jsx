@@ -56,23 +56,16 @@ export function Project() {
     },
   ];
 
-  // LOGIC: Calculate which card is in the center based on scroll position
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const scrollLeft = container.scrollLeft;
       const containerWidth = container.clientWidth;
-      
-      // We determine card width based on screen size (approximate breakpoint check)
-      // Mobile Card (300) + Gap (24) = 324
-      // Desktop Card (650) + Gap (40) = 690
       const isMobile = window.innerWidth < 768;
       const itemStride = isMobile ? 324 : 690;
       
-      // Calculate index
       const newIndex = Math.round(scrollLeft / itemStride);
       
-      // Only update state if it changed to prevent re-renders
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < projects.length) {
         setActiveIndex(newIndex);
       }
@@ -97,7 +90,7 @@ export function Project() {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl font-bold text-white tracking-tight"
           >
-            Featured Projects
+            Projects
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -109,7 +102,6 @@ export function Project() {
           </motion.p>
         </div>
 
-        {/* Scrollable Container */}
         <div 
           ref={scrollContainerRef}
           onScroll={handleScroll}
@@ -117,13 +109,10 @@ export function Project() {
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
-            // LOGIC: Dynamic padding to ensure the First and Last card are centered
-            // calc(50vw - (CardWidth / 2))
-            paddingLeft: 'max(24px, calc(50vw - 150px))', // Mobile Default
+            paddingLeft: 'max(24px, calc(50vw - 150px))', 
             paddingRight: 'max(24px, calc(50vw - 150px))',
           }}
         >
-          {/* We use a media query style block here to override padding for desktop */}
           <style>{`
             @media (min-width: 768px) {
               .no-scrollbar {
@@ -137,9 +126,6 @@ export function Project() {
             <motion.div 
               key={idx}
               className="snap-center shrink-0 origin-center transition-all duration-500 ease-out"
-              // ANIMATION LOGIC:
-              // If Active: Scale 1.1 (Big), Opacity 1
-              // If Inactive: Scale 0.9 (Small), Opacity 0.5
               animate={{
                 scale: idx === activeIndex ? 1.1 : 0.9,
                 opacity: idx === activeIndex ? 1 : 0.4,
@@ -169,32 +155,26 @@ function ResponsiveGlassCard({ project, isActive }) {
   return (
     <div className="relative w-[300px] h-[650px] md:w-[650px] md:h-[400px] rounded-3xl overflow-hidden group cursor-pointer shadow-2xl bg-[#0a0a0a] border border-white/5 transition-all duration-500 ease-in-out">
       
-      {/* 1. MOBILE IMAGE */}
       <img 
         src={project.mobileImg} 
         alt={`${project.title} mobile`} 
         className="block md:hidden absolute inset-0 w-full h-full object-fit opacity-90"
       />
 
-      {/* 2. DESKTOP IMAGE */}
       <img 
         src={project.desktopImg} 
         alt={`${project.title} desktop`} 
         className="hidden md:block absolute inset-0 w-full h-full object-fit opacity-90"
       />
       
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80" />
 
-      {/* 3. GLASS OVERLAY */}
-      {/* We only show the full 'hover' state if this specific card is ACTIVE (in the middle) */}
       <div 
         className={`absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5 md:right-5 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg transition-transform duration-500 ${
           isActive ? 'translate-y-0' : 'translate-y-2'
         }`}
       >
         
-        {/* Title Row */}
         <div className="flex justify-between items-center mb-2">
           <div className="flex items-center gap-3">
              <h3 className="text-white font-bold text-lg md:text-2xl tracking-tight shadow-black drop-shadow-md">{project.title}</h3>
@@ -205,7 +185,6 @@ function ResponsiveGlassCard({ project, isActive }) {
           </div>
         </div>
         
-        {/* Description - Fade out if not active */}
         <motion.p 
           animate={{ opacity: isActive ? 1 : 0, height: isActive ? "auto" : 0 }}
           className="hidden md:block text-gray-200 text-sm line-clamp-2 leading-relaxed mb-3 font-light text-shadow"
@@ -213,12 +192,10 @@ function ResponsiveGlassCard({ project, isActive }) {
           {project.description}
         </motion.p>
 
-        {/* Action Buttons */}
         <div className="flex justify-between md:justify-start md:gap-3 pt-2 md:pt-0 border-t border-white/20 md:border-none md:mt-1">
            <a 
              href={project.githubLink} 
              target="_blank" 
-             // Prevent clicking links on inactive cards to avoid accidents
              style={{ pointerEvents: isActive ? 'auto' : 'none' }}
              className={`bg-white text-xs md:text-sm text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors px-2 py-1.5 rounded-md hover:bg-white/10 ${!isActive && "opacity-50"}`}
            >

@@ -3,12 +3,32 @@ import React, { useEffect, useRef } from "react";
 export function SideComponent2() {
   const scrollRef = useRef(null);
 
-  const frontends = ["React", "TailwindCSS", "Recoil", "Framer Motion"];
-  const backends = ["Node.js", "Express", "FASTAPI"];
-  const dbandServices = ["MongoDB", "Github", "Git", "Oauth", "JWT", "Postman"];
+  const languages = ["Python", "TypeScript", "JavaScript", "SQL"];
+  const databases = ["PostgreSQL", "MongoDB"];
+  const webTechnologies = ["React.js", "Node.js", "Express.js", "WebRTC", "WebSocket", "Tailwind CSS", "FastAPI"];
+  const tools = ["Git", "GitHub", "Docker"];
+  const genAI = ["LangGraph", "LangChain", "AI Agents", "RAG", "Gemini API", "Pinecone", "Prompts"];
 
-  // Duplicate content to allow smooth infinite scroll illusion
-  const repeatedContent = [frontends, backends, dbandServices, frontends, backends, dbandServices];
+  const sectionTitles = [
+    "Languages",
+    "Databases",
+    "Web Technologies",
+    "Tools",
+    "AI Engineering"
+  ];
+
+  const repeatedContent = [
+    languages,
+    databases,
+    webTechnologies,
+    tools,
+    genAI,
+    languages,
+    databases,
+    webTechnologies,
+    tools,
+    genAI,
+  ];
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -19,7 +39,7 @@ export function SideComponent2() {
 
     const scroll = () => {
       if (container.scrollTop >= container.scrollHeight / 2) {
-        container.scrollTop = 0; // reset mid-way for infinite effect
+        container.scrollTop = 0; 
       } else {
         container.scrollTop += scrollSpeed;
       }
@@ -36,21 +56,16 @@ export function SideComponent2() {
         Skills
       </div>
 
-      <div
-        ref={scrollRef}
-        className="flex-1 overflow-y-hidden space-y-6"
-      >
+      <div ref={scrollRef} className="flex-1 overflow-y-hidden space-y-6">
         {repeatedContent.map((section, index) => (
           <div key={index}>
             <h3 className="text-white font-semibold text-lg mb-2">
-              {index % 3 === 0 ? "Frontend" : index % 3 === 1 ? "Backend" : "DB & Services"}:
+              {sectionTitles[index % 5]}:
             </h3>
+            
             <div className="flex flex-wrap gap-3">
               {section.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 border border-black text-black  text-base rounded-full bg-white transition-transform duration-300 hover:scale-[1.25]"
-                >
+                <span key={i} className="px-4 py-2 border border-black text-black text-base rounded-full bg-white transition-transform duration-300 hover:scale-[1.25]">
                   {tech}
                 </span>
               ))}

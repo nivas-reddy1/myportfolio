@@ -49,7 +49,7 @@ export function LandingPage() {
       </div>
       <div className="flex justify-center">
       <div className="flex flex-col mt-5 gap-2 items-start w-full max-w-[468px]">
-        <div className="bg-[#0D0D0D] ml-2 w-[380px] p-2 rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+        <div className="bg-[#0D0D0D] ml-2 w-[400px] p-2 rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
           <GithubCalendar />
         </div>
         <div className="w-[380px] m-2 mt-5 mb-10 ">

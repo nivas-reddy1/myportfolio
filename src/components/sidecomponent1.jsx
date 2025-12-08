@@ -17,7 +17,7 @@ export function SideComponent1() {
             I'm someone who learns fast, adapts easily, and enjoys working with different people and ideas.
           </p>
           <p className="mt-2">
-            Whether it's building solo or collaborating in a team, I focus on creating clean, optimal products and always improving with each project.
+            Whether it's building solo or collaborating in a team, I focus on creating clean, optimal code and always improving with each project.
           </p>
           <p className="mt-2">
             This site reflects my journey — what's built, what's broken, and what's next.
@@ -32,7 +32,7 @@ export function SideComponent1() {
           </p>
         </div>
         <div className='mt-5 mr-15 text-right transition-transform duration-300 hover:scale-[1.05]'>
-          <a href="/resume.pdf" target="_blank" className="text-right px-4 py-2 border-6 border-green-400 text-black rounded-lg bg-white">
+          <a href="/resume8_12.pdf" target="_blank" className="text-right px-4 py-2 border-6 border-green-400 text-black rounded-lg bg-white">
             Resume
           </a>
         </div>
