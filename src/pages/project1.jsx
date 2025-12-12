@@ -24,7 +24,7 @@ export function Project() {
     },
     {
       title: "Gmail Agent",
-      description: "A modern React interface designed for a LangGraph-powered Gmail Agent.",
+      description: "A modern React interface designed for a LangGraph-powered Gmail Agent. Please patience to popup signin page as it is not free to deploy backend that runs alltime for a unemployed kid.",
       githubLink: "https://github.com/my-lord1/Gmail-Assistant-FE2",
       websiteLink: "https://gmail-assistant-qqw9.vercel.app",
       desktopImg: "/agent1.png",
