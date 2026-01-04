@@ -31,6 +31,14 @@ export function Project() {
       mobileImg: "/agent2.png"
     },
     {
+      title: "Github RAG",
+      description: "A full-stack Github RAG application built with React, Pinecone, FastAPI and Langchain.",
+      githubLink: "https://github.com/my-lord1/Git-Rag-FE",
+      websiteLink: "https://githubrag.vercel.app",
+      desktopImg: "/gitrag1.png",
+      mobileImg: "/gitrag2.png"
+    },
+    {
       title: "Notes App",
       description: "Developed a notes management application using React JS that allows users to create, organize, and manage notes with tagging, filtering, and data persistence using localStorage.",
       githubLink: "https://github.com/my-lord1/Notes-App",
