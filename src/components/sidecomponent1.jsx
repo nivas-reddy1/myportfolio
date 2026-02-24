@@ -32,7 +32,7 @@ export function SideComponent1() {
           </p>
         </div>
         <div className='mt-5 mr-15 text-right transition-transform duration-300 hover:scale-[1.05]'>
-          <a href="/resume04_1.pdf" target="_blank" className="text-right px-4 py-2 border-6 border-green-400 text-black rounded-lg bg-white">
+          <a href="/24-02.pdf" target="_blank" className="text-right px-4 py-2 border-6 border-green-400 text-black rounded-lg bg-white">
             Resume
           </a>
         </div>

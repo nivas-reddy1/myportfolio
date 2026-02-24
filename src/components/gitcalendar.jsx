@@ -4,7 +4,7 @@ import GitHubCalendar from 'react-github-calendar';
 const selectLastHalfYear = (contributions) => {
   const currentDate = new Date();
   const sixMonthsAgo = new Date();
-  sixMonthsAgo.setMonth(currentDate.getMonth() - 6);
+  sixMonthsAgo.setMonth(currentDate.getMonth() - 8);
 
   return contributions.filter((activity) => {
     const date = new Date(activity.date);
@@ -38,7 +38,7 @@ export function GithubCalendar() {
           }`}
         >
           <GitHubCalendar
-            username="my-lord1"
+            username="nivas-reddy1"
             transformData={selectLastHalfYear}
             hideColorLegend
             hideTotalCount

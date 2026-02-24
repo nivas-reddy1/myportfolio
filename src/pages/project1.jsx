@@ -17,7 +17,7 @@ export function Project() {
     {
       title: "Video Chat",
       description: "A full-stack real-time video chat built with React, WebRTC, Socket.IO, and Node.js.",
-      githubLink: "https://github.com/my-lord1/Frontend-for-Video-Chat",
+      githubLink: "https://github.com/nivas-reddy1/Frontend-for-Video-Chat",
       websiteLink: "https://videochat-two.vercel.app",
       desktopImg: "/videochat1.png", 
       mobileImg: "/videochat2.png"
@@ -25,7 +25,7 @@ export function Project() {
     {
       title: "Gmail Agent",
       description: "A modern React interface designed for a LangGraph-powered Gmail Agent. Please patience to popup signin page as it is not free to deploy backend that runs alltime for a unemployed kid.",
-      githubLink: "https://github.com/my-lord1/Gmail-Assistant-FE2",
+      githubLink: "https://github.com/nivas-reddy1/Gmail-Assistant-FE2",
       websiteLink: "https://gmail-assistant-qqw9.vercel.app",
       desktopImg: "/agent1.png",
       mobileImg: "/agent2.png"
@@ -33,15 +33,23 @@ export function Project() {
     {
       title: "Github RAG",
       description: "A full-stack Github RAG application built with React, Pinecone, FastAPI and Langchain.",
-      githubLink: "https://github.com/my-lord1/Git-Rag-FE",
+      githubLink: "https://github.com/nivas-reddy1/Git-Rag-FE",
       websiteLink: "https://githubrag.vercel.app",
       desktopImg: "/gitrag1.png",
       mobileImg: "/gitrag2.png"
     },
     {
+      title: "Food Delivery Platform",
+      description: "A full-stack multi-vendor food delivery platform featuring real-time order tracking, and a comprehensive dashboard for restaurants and customers.",
+      githubLink: "https://github.com/nivas-reddy1/food-delivery-frontend",
+      websiteLink: "https://giggidy123.netlify.app",
+      desktopImg: "/food1.png",
+      mobileImg: "/food2.png"
+    },
+    {
       title: "Notes App",
       description: "Developed a notes management application using React JS that allows users to create, organize, and manage notes with tagging, filtering, and data persistence using localStorage.",
-      githubLink: "https://github.com/my-lord1/Notes-App",
+      githubLink: "https://github.com/nivas-reddy1/Notes-App",
       websiteLink: "https://notes125.netlify.app",
       desktopImg: "/Notesapp1.png",
       mobileImg: "/Notesapp2.png"
@@ -49,7 +57,7 @@ export function Project() {
     {
       title: "Movie Review",
       description: "Built a movie review application using React JS that allows users to search and filter movies, view detailed information modal/popup, and provide star-based ratings using the TMDB API.",
-      githubLink: "https://github.com/my-lord1/Movie-Review1",
+      githubLink: "https://github.com/nivas-reddy1/Movie-Review1",
       websiteLink: "https://moviehub121.netlify.app",
       desktopImg: "/review1.png",
       mobileImg: "/review2.png"
